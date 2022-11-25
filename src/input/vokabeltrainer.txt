@@ -1,0 +1,6 @@
+English/German
+0 - pear - Birne
+1 - consequence - Folge
+2 - spider - Spinne
+3 - apple - Apfel
+4 - country - Land
