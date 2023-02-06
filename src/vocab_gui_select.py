@@ -23,7 +23,7 @@ class VocabGuiSelect:
         root = tkinter.Tk()
         root.title("Vokabeltrainer")
         root.geometry("720x480")
-        root.config(bg="white")
+        root.configure(bg="white")
         return root
 
     def destroy_root(self):

@@ -1,6 +1,6 @@
 import random as rand
 
-from src.input.vokabel import Vokabel
+from src.models.vokabel import Vokabel
 
 
 class Setup:

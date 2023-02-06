@@ -1,5 +1,6 @@
-import tkinter
 from tkinter.font import Font
+
+import customtkinter
 
 
 class VocabGuiResults:
@@ -26,24 +27,23 @@ class VocabGuiResults:
 
     def create_interface(self):
         font = Font(family="Segoe Print", size=16, weight="bold")
-        label_title = tkinter.Label(self.root, text="You finished your set!", font=font, bg="white")
+        label_title = customtkinter.CTkLabel(self.root, text="You finished your set!", text_font=font)
         label_title.grid(row=0, column=2)
-        self.label_result = tkinter.Label(self.root, text="", bg="white")
+        self.label_result = customtkinter.CTkLabel(self.root, text="", bg="white")
         self.label_result.grid(row=2, column=2)
         self.set_text()
         self.home_button()
 
     def set_text(self):
         self.vocable_length = len(self.correct_vocables) + len(self.failed_vocables)
-        self.label_result.config(text= "You achieved " + str(len(self.correct_vocables)) + " out of " + str(self.vocable_length) + " correct")
+        self.label_result.configure(text= "You achieved " + str(len(self.correct_vocables)) + " out of " + str(self.vocable_length) + " correct")
 
     def home_button(self):
-        home_button = tkinter.Button(self.root, text="Return to Menu", command=self.return_to_menu)
+        home_button = customtkinter.CTkButton(self.root, text="Return to Menu", command=self.return_to_menu)
         home_button.grid(row=4, column=2)
 
     def return_to_menu(self):
         self.root.destroy()
-        import src.gui.vocab_gui_select
         quit(0)
 
     def save_results(self, failed_vocables, correct_vocables):
